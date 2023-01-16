@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 //import reactLogo from './assets/react.svg';
 import './App.css';
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
+import Feed from "./components/Feed";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,9 +15,12 @@ function App() {
     const getUser = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get("/api/user/1");
+        const url = "http://localhost/api/user/1";
+        const res = await axios.get(url);
         setUser(res.data);
-      } catch (err) { }
+      } catch (err) { 
+        console.log(err);
+      }
       setIsLoading(false);
     };
     getUser();
@@ -22,10 +28,10 @@ function App() {
 
   return (
     <div className="container">
-      {/* <Sidebar isLoading={isLoading} /> */}
+      <Sidebar isLoading={isLoading} />
       <div className="home">
-        {/* <Topbar isLoading={isLoading} user={user} />
-        <Feed /> */}
+        <Topbar isLoading={isLoading} user={user} />
+        <Feed />
       </div>
     </div>
   );

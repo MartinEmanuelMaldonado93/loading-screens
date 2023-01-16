@@ -2,8 +2,8 @@
 import React,{ useEffect, useState } from "react";
 import "./feed.css";
 import axios from "axios";
-// import Post from "../post/Post";
-// import Skeleton from "../skeleton/Skeleton";
+import Skeleton from "./Skeleton";
+import Post from "./Post";
 
 const Feed = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +13,7 @@ const Feed = () => {
         const getVideos = async () => {
             setIsLoading(true);
             try {
-                const res = await axios.get("/api/videos/1");
+                const res = await axios.get("http://localhost/api/videos/1");
                 setVideos(res.data);
             } catch (err) { }
             setIsLoading(false);

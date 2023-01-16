@@ -1,0 +1,131 @@
+:root {
+  --height-bar: 3rem;
+  --radius-search: 1.4em;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--height-bar);
+  background-color: hsl(0, 0%, 13%);
+  display: flex;
+  align-items: center;
+  color: white;
+  border-bottom: 1px solid #444;
+  z-index: 9;
+}
+
+.topLeft {
+  flex: 3;
+}
+.topLeft img {
+  display: inline;
+}
+
+.logo {
+  height: 1.2rem;
+  margin-right: 0.4em;
+}
+
+.logoText {
+  font-size: 20px;
+}
+
+.topCenter {
+  flex: 6;
+  height: 100%;
+  margin-right: 4rem;
+  display: grid;
+  align-items: center;
+}
+
+.topSearch {
+  display: flex;
+  align-items: center;
+}
+
+.topSearch > input {
+  width: 100%;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-block: 1.2em;
+  background-color: var(--bg);
+  border: 1px solid hsl(0, 0%, 83%, 0.6);
+  border-right: none;
+  border-radius: var(--radius-search);
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+}
+
+.topSearch > input::placeholder {
+  font-size: 1rem;
+  color: #888;
+}
+
+.topSearchIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  padding-block: 1.2em;
+  width: 65px;
+  height: 2rem;
+  border: 1px solid hsl(0, 0%, 83%, 0.6);
+  border-radius: var(--radius-search);
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  background-color: #313131;
+}
+
+.topSearchIcon {
+  font-size: 20px !important;
+  color: #777;
+}
+
+.topRight {
+  /* flex: 2.4; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.topIcon {
+  margin-right: 1.2em;
+}
+
+.topImg {
+  width: 2.5em;
+  height: 2.4em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 47em) {
+  .topLeft {
+    padding-block: .2em;
+  }
+  .logoText {
+    font-size: small;
+    font-weight: 400;
+  }
+  .topIcon {
+    margin:0;
+  }
+}
+@media (max-width: 37em) {
+  .topLeft {
+    flex: 1.4;
+  }
+  .topCenter {
+    margin-right: 0;
+  }
+  .logoText {
+    display: none;
+  }
+  .topRight {
+    flex: 2;
+  }
+  .topRight svg:nth-child(-n + 2) {
+    display: none;
+  }
+}
