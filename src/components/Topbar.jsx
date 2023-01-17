@@ -9,7 +9,7 @@ import {
 } from "@material-ui/icons";
 import Skeleton from "./Skeleton";
 
-const Topbar = ({ isLoading, user={} }) => {
+const Topbar = ({ isLoading, user = {} }) => {
 
     return (
         <div className="topbar">
@@ -26,16 +26,17 @@ const Topbar = ({ isLoading, user={} }) => {
                     <Mic />
                 </div>
             </div>
-            {isLoading ? (
-                <Skeleton type="top" />
-            ) : (
-                <div className="topRight">
-                    <VideoCall className="topIcon" />
-                    <Apps className="topIcon" />
-                    <Notifications className="topIcon" />
-                    <img className="topImg" src={user?.avatar} alt="" />
-                </div>
-            )}
+            {
+                isLoading ?
+                    <Skeleton type="top" />
+                    : (
+                        <div className="topRight">
+                            <VideoCall className="topIcon" />
+                            <Apps className="topIcon" />
+                            <Notifications className="topIcon" />
+                            <img className="topImg" src={user?.avatar} alt="" />
+                        </div>
+                    )}
         </div>
     );
 };

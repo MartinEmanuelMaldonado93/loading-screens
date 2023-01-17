@@ -4,7 +4,7 @@ import { CircularProgress } from "@material-ui/core";
 
 export default function Skeleton({ type }) {
     const COUNTER = 8;
-    
+
     const FeedSkeleton = () => (
         <div className="postSk">
             <div className="postSkImg"></div>
